@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Edgar Cristales — mamparas, espejos y cerramientos de vidrio.
+   Paleta sacada de las propuestas comerciales de la marca: petróleo oscuro,
+   crema cálido y dorado. Tipografía: Playfair Display (logo/acentos) + Manrope.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg: #f8f6f1;
+  --surface: #eee6d8;
+  --ink: #23201a;
+  --gray: #6b6357;
+  --faint: #9a9182;
+  --border: #e4dac6;
+  --border-strong: #d3c4a4;
+  --petrol: #1c2e30;
+  --petrol-deep: #142224;
+  --gold: #b08a4e;
+  --gold-strong: #c9a262;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--gold); color: #fff; }
+
+a:focus-visible, button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.serif { font-family: var(--font-playfair), Georgia, serif; }
+
+/* ── Type scale ────────────────────────────────────────────────────────────── */
+
+.name {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(40px, 6.6vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+
+.h-section {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.h-card {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.lead {
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+.label {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.label-light {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+}
+
+.idx {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.meta {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--faint);
+}
+
+@media (max-width: 767px) {
+  .h-section { font-size: 27px; }
+  .h-card { font-size: 18px; }
+  .lead { font-size: 17px; }
+}
+
+/* ── Components ────────────────────────────────────────────────────────────── */
+
+.btn {
+  font-family: var(--font-manrope), sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 28px;
+  border-radius: 3px;
+  border: 1px solid var(--petrol);
+  color: var(--petrol);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: border-color 150ms var(--ease), background 150ms var(--ease), color 150ms var(--ease);
+}
+.btn:hover { background: var(--petrol); color: #f8f6f1; }
+
+.btn-gold { background: var(--gold); color: #fff8ec; border-color: var(--gold); }
+.btn-gold:hover { background: var(--gold-strong); border-color: var(--gold-strong); color: #fff8ec; }
+
+.btn-outline-light { border-color: color-mix(in srgb, #f8f6f1 40%, transparent); color: #f8f6f1; }
+.btn-outline-light:hover { background: #f8f6f1; color: var(--petrol); }
+
+.u {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border-strong);
+  transition: text-decoration-color 150ms var(--ease);
+}
+.u:hover { text-decoration-color: var(--gold); }
+
+.dim { color: var(--gray); transition: color 150ms var(--ease); }
+.dim:hover { color: var(--gold); }
+
+.rule { border-top: 1px solid var(--border); }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  pointer-events: none;
+}
+
+/* Servicio accordion */
+.svc-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+.svc-item summary::-webkit-details-marker { display: none; }
+.svc-item[open] .svc-chevron { transform: rotate(45deg); }
+.svc-chevron { transition: transform 220ms var(--ease); }
+
+.img-placeholder {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed var(--border-strong);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--faint);
+  font-size: 12.5px;
+  text-align: center;
+  padding: 10px;
+  background: color-mix(in srgb, var(--bg) 60%, #fff);
+}
+
+/* ── Motion ────────────────────────────────────────────────────────────────── */
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 650ms var(--ease) both; }
+
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+.nav-on { color: var(--petrol); font-weight: 700; }
