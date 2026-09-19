@@ -40,7 +40,10 @@ export const servicios = [
     teaser: 'Mamparas a medida en vidrio templado, para baños más luminosos y con terminaciones premium.',
     detalle:
       'Fabricamos e instalamos mamparas de baño a medida en vidrio templado de seguridad, con herrajes en distintos acabados. Diseños frontales, en L, o con paño fijo y corredizo, pensados para sumar luz y orden sin resignar estética. Incluye medición en el lugar, fabricación e instalación cuidada.',
-    imagenes: [] as { src: string; alt: string }[], // COMPLETAR
+    imagenes: [
+      { src: '/mampara-1.jpg', alt: 'Mampara de baño con paño fijo, terminación en vidrio transparente' },
+      { src: '/mampara-2.jpg', alt: 'Mampara de ducha con herrajes en negro' },
+    ] as { src: string; alt: string }[],
   },
   {
     slug: 'espejos',
@@ -48,7 +51,10 @@ export const servicios = [
     teaser: 'Espejos a medida para baños, vestidores y living, con cortes especiales y biselados.',
     detalle:
       'Cortamos y colocamos espejos a medida para cualquier ambiente: baños, vestidores, gimnasios en casa o locales comerciales. Trabajamos distintos espesores, bordes pulidos o biselados, y la posibilidad de sumar marco o luz LED perimetral. Cada pieza se corta a la medida exacta del espacio.',
-    imagenes: [] as { src: string; alt: string }[], // COMPLETAR
+    imagenes: [
+      { src: '/espejo-1.jpg', alt: 'Espejo con luz LED perimetral en baño' },
+      { src: '/espejo-2.jpg', alt: 'Espejo con luz LED perimetral sobre bacha de baño' },
+    ] as { src: string; alt: string }[],
   },
   {
     slug: 'cerramientos',
@@ -64,7 +70,11 @@ export const servicios = [
     teaser: 'Barandas y cerramientos de vidrio para balcones, con estructuras de aluminio de bajo mantenimiento.',
     detalle:
       'Diseñamos e instalamos barandas de vidrio y estructuras de aluminio para balcones, sumando seguridad sin resignar vista ni luz. Trabajamos tanto en obra nueva como en reformas, con terminaciones en aluminio anodizado o pintado según el estilo del edificio.',
-    imagenes: [] as { src: string; alt: string }[], // COMPLETAR
+    imagenes: [
+      { src: '/balcon-1.jpg', alt: 'Baranda de vidrio en balcón con vista a jardín y pileta' },
+      { src: '/balcon-2.jpg', alt: 'Baranda de vidrio en entrepiso interior con estructura de aluminio negro' },
+      { src: '/balcon-3.jpg', alt: 'Panel de vidrio como baranda junto a escalera, herrajes en negro' },
+    ] as { src: string; alt: string }[],
   },
 ]
 
